@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+{/* <link href="../src/css/bootstrap-icons.css" rel="stylesheet">
+
+
+<link href="../src/css/bootstrap-icons.css" rel="stylesheet">
+
+<link href="../src/css/templatemo-festava-live.css" rel="stylesheet"> */}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
