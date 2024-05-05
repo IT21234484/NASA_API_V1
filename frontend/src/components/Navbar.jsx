@@ -24,22 +24,31 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md dark:bg-gray-900">
       <div className="max-w-screen-xl mx-auto px-4 py-2 flex items-center justify-between">
-        {/* Logo */}
-        <button onClick={() => handleExplore("/Selection")}>
-          <img
-            src={logoImage}
-            className="h-12 w-auto"
-            alt="NASA Logo"
-          />
-        </button>
+        {/* Logo and NASA Full Form */}
+        <div className="flex items-center space-x-4">
+          <button onClick={() => handleExplore("/Selection")}>
+            <img
+              src={logoImage}
+              className="h-12 w-auto"
+              alt="NASA Logo"
+            />
+          </button>
+          <button onClick={() => handleExplore("/Selection")}>
+
+          <span className="text-gray-900 text-lg font-semibold font-mono hidden md:block">
+            National Aeronautics and Space Administration
+          </span>
+          </button>
+
+        </div>
 
         {/* Main Menu */}
-        <div className="flex items-center space-x-4 md:space-x-6">
+        <div className="flex items-center space-x-4  md:space-x-6">
           {/* Menu Items */}
-          <ul className="hidden md:flex items-center space-x-4 font-medium text-gray-900 dark:text-white">
+          <ul className="hidden md:flex items-center mt-3 space-x-4 font-medium text-gray-900 dark:text-white">
             <li>
               <button
-                onClick={() => handleExplore("/MarsMission")}
+                onClick={() => handleExplore("/Rovers")}
                 className="hover:text-blue-700 dark:hover:text-blue-500"
               >
                 Mars Mission
@@ -66,40 +75,40 @@ const Navbar = () => {
           {/* Logout Button (visible on smaller screens) */}
           <button
             onClick={handleLogout}
-            className="md:hidden bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-lg"
+            className="md:hidden bg-blue-900 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-lg"
           >
             Logout
           </button>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Logout Button (visible on larger screens) */}
           <button
-            type="button"
-            className="md:hidden bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg p-2"
-            aria-label="Open main menu"
+            onClick={handleLogout}
+            className="hidden md:block bg-blue-900 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-lg"
           >
-            <svg
-              className="w-6 h-6"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+            Logout
           </button>
         </div>
 
-        {/* Logout Button (visible on larger screens) */}
+        {/* Mobile Menu Toggle Button */}
         <button
-          onClick={handleLogout}
-          className="hidden md:block bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-lg"
+          type="button"
+          className="md:hidden bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg p-2"
+          aria-label="Open main menu"
         >
-          Logout
+          <svg
+            className="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
         </button>
       </div>
     </nav>

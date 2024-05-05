@@ -13,8 +13,7 @@ const VideoWrapper = ({ children, url }) => {
         <source src={url} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className='absolute top-0 left-0 w-full h-full bg-black opacity-30'></div>
-      {/* Content (children) placed over the video */}
+
       <div className='absolute inset-0 z-20'>{children}</div>
     </div>
   );

@@ -26,7 +26,7 @@ const Selection = () => {
               Explore the latest photos captured by Mars rovers.
             </p>
             <button
-              onClick={() => handleExplore("/mars")}
+              onClick={() => handleExplore("/Rovers")}
               className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
             >
               Launch
