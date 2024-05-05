@@ -18,7 +18,7 @@ export const AuthContextProvider = ({ children }) => {
   //check user is logged in
   const checkUserLoggedIn = async () => {
     try {
-      const res = await fetch(`http://localhost:8002/api/me`, {
+      const res = await fetch(`http://localhost:8000/nasa/chk`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -28,8 +28,8 @@ export const AuthContextProvider = ({ children }) => {
       if (!result.error) {
         setUser(result);
         if (
-          location.pathname === "/login" ||
-          location.pathname === "/register"
+          location.pathname === "/Login" ||
+          location.pathname === "/Register"
         ) {
           setTimeout(() => {
             navigate("/", { replace: true });
@@ -38,17 +38,17 @@ export const AuthContextProvider = ({ children }) => {
           navigate(location.pathname ? location.pathname : "/");
         }
       } else {
-        navigate("/login", { replace: true });
+        navigate("/Login", { replace: true });
       }
     } catch (err) {
       console.log(err);
-      navigate("/login", { replace: true });
+      navigate("/Login", { replace: true });
     }
   };
   //login request
   const loginUser = async (userData) => {
     try {
-      const res = await fetch(`http://localhost:8002/api/login`, {
+      const res = await fetch(`http://localhost:8000/nasa/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export const AuthContextProvider = ({ children }) => {
   //register request
   const registerUser = async (userData) => {
     try {
-      const res = await fetch(`http://localhost:8002/api/register`, {
+      const res = await fetch(`http://localhost:8000/nasa/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export const AuthContextProvider = ({ children }) => {
       const result = await res.json();
       if (!result.error) {
         toast.success("User Registered Successfully! Login to continue ");
-        navigate("/login", { replace: true });
+        navigate("/Login", { replace: true });
       } else {
         toast.error(result.error);
       }

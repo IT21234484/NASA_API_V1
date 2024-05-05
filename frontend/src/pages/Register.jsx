@@ -6,40 +6,41 @@ import HomePageVideo from '../assets/video/HomePageVideo.mp4';
 import VideoWrapper from '../components/VideoWrapper.jsx';
 
 export default function Registration() {
-    const [credentials, setCredentials] = useState({
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
-      const { registerUser } = useContext(AuthContext);
-      const { toast } = useContext(ToastContext);
-    
-      const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setCredentials({ ...credentials, [name]: value });
-      };
-    
-      const handleSubmit = (event) => {
-        event.preventDefault();
-        if (
-          !credentials.email ||
-          !credentials.password ||
-          !credentials.confirmPassword
-        ) {
-          toast.error("Please enter all the required fields!");
-          return;
-        }
-    
-        //check if the password and confirm password match
-        if (credentials.password !== credentials.confirmPassword) {
-          toast.error("Passwords do not match");
-          return;
-        }
-    
-        const userData = { ...credentials, confirmPassword: undefined };
-        registerUser(userData);
-      };
-    
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const { registerUser } = useContext(AuthContext);
+  const { toast } = useContext(ToastContext);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setCredentials({ ...credentials, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (
+      !credentials.email ||
+      !credentials.password ||
+      !credentials.confirmPassword
+    ) {
+      toast.error("Please enter all the required fields!");
+      return;
+    }
+
+    //check if the password and confirm password match
+    if (credentials.password !== credentials.confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
+
+    const userData = { ...credentials, confirmPassword: undefined };
+    registerUser(userData);
+    console.log("userdata",userData);
+  };
+
   return (
     <VideoWrapper url={HomePageVideo}>
       <div className="flex h-screen items-center justify-center">

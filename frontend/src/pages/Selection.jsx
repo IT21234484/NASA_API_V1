@@ -63,7 +63,7 @@ onClick={() => handleExplore("/Rovers")}
               Unlock the beauty of our planet with satellite imagery.
             </p>
             <button
-              // onClick={() => handleExplore("/earth")}
+              onClick={() => handleExplore("/EarthImages")}
               className='bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500'
             >
               Launch
