@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
 import { createContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PropTypes from "prop-types";
 
 const ToastContext = createContext();
 
@@ -14,8 +14,8 @@ export const ToastContextProvider = ({ children }) => {
   );
 };
 
+export default ToastContext;
+
 ToastContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-export default ToastContext;
