@@ -7,7 +7,7 @@ import Loading from '../components/Loading.jsx';
 const EarthImages = () => {
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState(null);
-  const [date, setDate] = useState("2024-01-01");
+  const [date, setDate] = useState("2018-01-01");
 
   const handleFetchImage = async () => {
     setLoading(true);
