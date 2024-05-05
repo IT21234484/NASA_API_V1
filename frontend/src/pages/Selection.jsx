@@ -1,91 +1,69 @@
-import React, { useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 
 import VideoWrapper from '../components/VideoWrapper';
 import HomePageVideo from "../assets/video/HomePageVideo.mp4"
 import astronautImage from '../assets/images/astronaut.png';
+
 const Selection = () => {
   const navigate = useNavigate();
-
 
   const handleExplore = (path) => {
     navigate(path);
   };
 
-  return(
-    <>
-      <VideoWrapper url ={HomePageVideo}>
+  return (
+    <VideoWrapper url={HomePageVideo}>
+      <div className="flex flex-col items-center justify-center h-full text-white">
+        <h1 className="text-4xl font-bold mt-12 mb-6">Welcome to NASAVERSE</h1>
+        <p className="text-lg mb-12">A Multisensory Exploration</p>
 
-      <div className="text-center">
-      <h1 className="text-6xl font-bold text-white mt-3 mb-0">NASAVERSE</h1>
-      <p className="text-lg text-white px-4   mt-3  mb-10">A MULTISENSORY EXPLORATION</p>
-      {/* <div className="max-w-lg mx-auto p-4  bg-opacity-30 rounded-lg">
-            <p className="text-white text-lg leading-relaxed text-center">
-              Welcome to NASAVERSE, a captivating journey through the realms of space exploration.
-            </p>
-          </div> */}
-   </div>
-
-
-    {/* <div className="flex justify-center mt-4">
-    <button
-
-onClick={() => handleExplore("/Rovers")}
-
-            type="button"
-            className="text-white font-medium text-lg px-5 py-2.5 rounded-full bg-black bg-opacity-10 border border-white rounded-full  hover:bg-opacity-40 focus:outline-none focus:ring-4 focus:ring-white"
-            style={{ fontFamily: "Roboto, sans-serif" }}
-          >
-            Explore the NASAVERSE
-          </button>
-        </div> */}
-
-
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mx-10 mt-64 '>
-          <div className='bg-gradient-to-r from-white border rounded-lg shadow-lg p-4 mx-10'>
-            <h2 className='text-xl font-semibold mb-2'>Mars Rover Photos</h2>
-            <p className='text-gray-700 mb-4'>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-screen-lg">
+          {/* Card 1: Mars Rover Photos */}
+          <div className="bg-white bg-opacity-10 rounded-lg shadow-lg p-6">
+            <h2 className="text-xl font-semibold mb-2">Mars Rover Photos</h2>
+            <p className="text-gray-300 mb-4">
               Explore the latest photos captured by Mars rovers.
             </p>
             <button
-              // onClick={() => handleExplore("/mars")}
-              className='bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500'
+              onClick={() => handleExplore("/mars")}
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
             >
               Launch
             </button>
           </div>
 
-
-          <div className='bg-gradient-to-r from-white border rounded-lg shadow-lg p-4 mx-10'>
-            <h2 className='text-xl font-semibold mb-2'>Earth</h2>
-            <p className='text-gray-700 mb-4'>
+          {/* Card 2: Earth */}
+          <div className="bg-white bg-opacity-10 rounded-lg shadow-lg p-6">
+            <h2 className="text-xl font-semibold mb-2">Earth</h2>
+            <p className="text-gray-300 mb-4">
               Unlock the beauty of our planet with satellite imagery.
             </p>
             <button
               onClick={() => handleExplore("/EarthImages")}
-              className='bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500'
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
             >
               Launch
             </button>
           </div>
-          <div className='bg-gradient-to-r from-white border rounded-lg shadow-lg p-4 mx-10'>
-            <h2 className='text-xl  font-semibold mb-2'>Astronomy</h2>
-            <p className='text-gray-700 mb-4'>
+
+          {/* Card 3: Astronomy */}
+          <div className="bg-white bg-opacity-10 rounded-lg shadow-lg p-6">
+            <h2 className="text-xl font-semibold mb-2">Astronomy</h2>
+            <p className="text-gray-300 mb-4">
               Discover the Astronomy Picture of the Day.
             </p>
             <button
               onClick={() => handleExplore("/Astronomy")}
-              className='bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500'
+              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
             >
               Launch
             </button>
           </div>
         </div>
-      </VideoWrapper>
-    </>
-  )
- 
+      </div>
+    </VideoWrapper>
+  );
 };
 
 export default Selection;
