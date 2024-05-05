@@ -37,6 +37,20 @@ const NASADataService = {
     }
 
   },
+  getEarthImages: async (date) => {
+    try {
+      const response = await fetch(
+        `https://api.nasa.gov/planetary/earth/imagery?lon=-95.33&lat=29.78&date=${date}&dim=0.15&api_key=Iz8C0yNbWJs0BSL1vfcviwLh594UoEzqh8yxOv8m`
+      );
+      
+      console.log("Earth Image:", response);
+      return response;
+    } catch (error) {
+      console.error("Error fetching picture of the day:", error);
+      return {};
+    }
+
+  },
 };
 
 export default NASADataService;
