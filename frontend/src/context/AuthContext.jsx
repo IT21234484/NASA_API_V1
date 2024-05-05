@@ -18,7 +18,7 @@ export const AuthContextProvider = ({ children }) => {
   //check user is logged in
   const checkUserLoggedIn = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/nasa/chk`, {
+      const res = await fetch(`https://nasa-api-n4ic.onrender.com/nasa/chk`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -48,7 +48,7 @@ export const AuthContextProvider = ({ children }) => {
   //login request
   const loginUser = async (userData) => {
     try {
-      const res = await fetch(`http://localhost:8000/nasa/login`, {
+      const res = await fetch(`https://nasa-api-n4ic.onrender.com/nasa/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export const AuthContextProvider = ({ children }) => {
   //register request
   const registerUser = async (userData) => {
     try {
-      const res = await fetch(`http://localhost:8000/nasa/register`, {
+      const res = await fetch(`https://nasa-api-n4ic.onrender.com/nasa/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
