@@ -104,11 +104,11 @@ export default function Registration() {
      
               <p className="text-gray-500">
                 By signing up, you agree to our{" "}
-                <a href="#" className="text-blue-500">
+                <a href="https://www.nasa.gov/privacy/" className="text-blue-500">
                   Terms
                 </a>{" "}
                 and{" "}
-                <a href="#" className="text-blue-500">
+                <a href="https://www.nasa.gov/privacy/" className="text-blue-500">
                   Privacy Policy
                 </a>
               </p>

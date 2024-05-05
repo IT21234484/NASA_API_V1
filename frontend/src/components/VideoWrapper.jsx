@@ -9,6 +9,7 @@ const VideoWrapper = ({ children, url }) => {
         autoPlay
         loop
         muted
+
       >
         <source src={url} type="video/mp4" />
         Your browser does not support the video tag.
